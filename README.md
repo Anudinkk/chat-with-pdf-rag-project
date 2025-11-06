@@ -1,4 +1,4 @@
-Chat with PDF (RAG) - FastAPI & React
+### Chat with PDF (RAG) - FastAPI & React
 
 This project is a full-stack "Chat with PDF" application that uses Retrieval-Augmented Generation (RAG) to answer questions based on an uploaded document.
 
@@ -6,7 +6,7 @@ The frontend is a modern React application, and the backend is a robust API buil
 
 A key feature is its resilience: it's designed to use OpenAI's powerful models by default, but will automatically fall back to local, open-source models if the OpenAI API key is missing or quota is exceeded.
 
-Features
+# Features
 
 PDF Upload: Users can upload a PDF document.
 
@@ -22,7 +22,7 @@ Local (Fallback): Automatically switches to ctransformers (e.g., TinyLlama) for 
 
 Dockerized: Fully containerized with docker-compose for one-command setup.
 
-Tech Stack
+# Tech Stack
 
 Backend: FastAPI, LangChain, OpenAI, CTransformers, ChromaDB, Sentence-Transformers
 
@@ -30,7 +30,7 @@ Frontend: React, Tailwind CSS, Lucide Icons, Axios
 
 Deployment: Docker, Docker Compose
 
-Setup and Running
+# Setup and Running
 
 Follow these steps to get the application running on your local machine.
 
