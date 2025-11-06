@@ -1,0 +1,39 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:80" # Nginx serves on port 80, we map it to 3000
+    depends_on:
+      - backend
+    networks:
+      - chatpdf-network
+
+  backend:
+    build:
+      context: ./backend
+    env_file:
+      - .env
+    ports:
+      - "8002:8000"
+    depends_on:
+      - chroma_db
+    networks:
+      - chatpdf-network
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+
+  chroma_db:
+    image: chromadb/chroma
+    ports:
+      - "8001:8000" # Use a different host port if 8000 is taken by backend
+    volumes:
+      - chroma_data:/chroma/chroma
+    networks:
+      - chatpdf-network
+
+networks:
+  chatpdf-network:
+    driver: bridge
+
+volumes:
+  chroma_data:

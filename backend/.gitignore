@@ -1,0 +1,6 @@
+# YOUR SPECIFIC REQUIREMENTS
+model folder - ignore entire Models directory
+model/
+models/
+uploads/ - ignore uploads directory
+uploads/
